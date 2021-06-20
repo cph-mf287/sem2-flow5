@@ -1,6 +1,7 @@
 package web.commands;
 
 import business.exceptions.UserException;
+import business.exceptions.ValueNotAssignedException;
 import business.persistence.Database;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,8 +18,7 @@ public class CommandUnprotectedPage extends Command
 
     public String execute(
             HttpServletRequest request,
-            HttpServletResponse response) throws UserException
-    {
+            HttpServletResponse response) throws UserException, ValueNotAssignedException {
         return pageToShow;
     }
 }

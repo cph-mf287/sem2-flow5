@@ -1,6 +1,6 @@
 <%@tag description="Overall Page template" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <%@attribute name="header" fragment="true" %>
 <%@attribute name="footer" fragment="true" %>
@@ -63,9 +63,11 @@
     </c:if>
 </header>
 
-<div id="body" class="container" style="min-height: 20vh;">
-    <jsp:doBody/>
-</div>
+<section>
+    <div id="body" class="container" style="min-height: 20vh;">
+        <jsp:doBody/>
+    </div>
+</section>
 
 <!-- Footer -->
 <div class="container">

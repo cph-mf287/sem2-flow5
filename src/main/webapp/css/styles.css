@@ -7,3 +7,41 @@
 {
     font-size: smaller;
 }
+
+body section {
+    padding-top: 40px!important;
+    padding-bottom: 66px!important;
+    background-color: #f8f8f8;
+}
+
+
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1170px;
+    }
+}
+
+.form-horizontal .form-group {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn, h1, h12, h2, h3, h4 {
+    text-transform: uppercase;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+    box-sizing: content-box;
+    opacity: 1;
+}
+
+hr:not([size]) {
+    height: 0;
+}

@@ -19,6 +19,12 @@
 
             <div style="margin-top: 3em;margin-bottom: 3em;">
                 Main page for this 2. semester start project used at cphbusiness.dk
+
+                <a href="fc/quick-byg-carport-med-fladt-tag">
+                    <button class="btn btn-primary">
+                        Design Carport
+                    </button>
+                </a>
             </div>
 
             <c:if test="${sessionScope.role == 'employee' }">

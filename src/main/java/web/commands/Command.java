@@ -1,6 +1,7 @@
 package web.commands;
 
 import business.exceptions.UserException;
+import business.exceptions.ValueNotAssignedException;
 import business.persistence.Database;
 
 import java.util.HashMap;
@@ -17,8 +18,7 @@ public abstract class Command
     private static HashMap<String, Command> commands;
     public static Database database;
 
-    private static void initCommands(Database database)
-    {
+    private static void initCommands(Database database) throws UserException {
         commands = new HashMap<>();
         commands.put("index", new CommandUnprotectedPage("index"));
         commands.put("loginpage", new CommandUnprotectedPage("loginpage"));
@@ -28,12 +28,13 @@ public abstract class Command
         commands.put("registercommand", new RegisterCommand(""));
         commands.put("customerpage", new CommandProtectedPage("customerpage", "customer"));
         commands.put("employeepage", new CommandProtectedPage("employeepage", "employee"));
+        commands.put("quick-byg-carport-med-fladt-tag", new QuickBuildCommand("quickbuild"));
+        commands.put("carport-bestillinger", new ManageCarportOrdersCommand("carportorders", "employee"));
     }
 
     public static Command fromPath(
             HttpServletRequest request,
-            Database db)
-    {
+            Database db) throws UserException {
         String action = request.getPathInfo().replaceAll("^/+", "");
         System.out.println("--> " + action);
 
@@ -49,6 +50,6 @@ public abstract class Command
     public abstract String execute(
             HttpServletRequest request,
             HttpServletResponse response)
-            throws UserException;
+            throws UserException, ValueNotAssignedException;
 
 }
